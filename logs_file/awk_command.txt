@@ -1,0 +1,33 @@
+ 1374  mkdir logs_file
+ 1375  cd logs_file/
+ 1376  vim zookeeper.log
+ 1377  cat zookeeper.log
+ 1378  clear
+ 1379  man wc
+ 1380  wc -1 zookeeper.log
+ 1381  wc -l zookeeper.log
+ 1382  clear
+ 1383  head =5 zookeeper.log
+ 1384  head -5 zookeeper.log
+ 1385  tail -5 zookeeper.log
+ 1386  awk '{print $1}' zookeeper.log
+ 1387  awk '{print $1}' zookeeper.log | head -5
+ 1388  awk '{print $1, $5}' zookeeper.log | head -5
+ 1389  awk '{print $1, $7}' zookeeper.log | head -5
+ 1390  awk '{print $1, $2, $7. $8. $9}' zookeeper.log | head -5
+ 1391  awk '{print $1, $2, $7, $8, $9}' zookeeper.log | head -5
+ 1392  awk 'NR<=5 {print $1, $2, $7, $8, $9}' zookeeper.log | head -5
+ 1393  awk 'NR<=5 {print $1, $2, $7, $8, $9}' zookeeper.log
+ 1394  awk 'NR<=15 && NR >= 5 {print $1, $2, $7, $8, $9}' zookeeper.log
+ 1395  awk 'NR > 5 && NR < 15 {print $1, $2, $7, $8, $9}' zookeeper.log
+ 1396  awk '$1 =="2015-07-29" {print $1, $2, $7, $8, $9}' zookeeper.log
+ 1397  awk '$1 =="2015-07-29" $1 <= "2015-08-29" {print $1, $2, $7, $8, $9}' zookeeper.log
+ 1398  awk '$1 =="2015-07-29" && $1 <= "2015-08-29" {print $1, $2, $7, $8, $9}' zookeeper.log
+ 1399  awk '$1 =="2015-07-29" && $1 <= "2015-08-29" {print $1, $2, $7, $8, $9}' zookeeper.log | wc =l
+ 1400  awk '$1 =="2015-07-29" && $1 <= "2015-08-29" {print $1, $2, $7, $8, $9}' zookeeper.log | wc -l
+ 1401  awk '$1 =="2015-07-29" {print $1, $2, $7, $8, $9}' zookeeper.log | wc -l
+ 1402  df -h
+ 1403  df -h | awk 'NR==2 {print &4}'
+ 1404  df -h | awk 'NR==2 {print $4}'
+ 1405  awk '$1 == "2015-07-29" && /WARN/ {print $1, $7, $8}' zookeeper.log
+ 1406  awk '/WARN/ && $1 == "2015-07-29" {print $1, $7, $8}' zookeeper.log
